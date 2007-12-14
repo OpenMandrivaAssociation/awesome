@@ -2,6 +2,7 @@ Name:		awesome
 Version:	2.0
 Release:	%mkrel 1
 Source:		http://awesome.naquadah.org/download/awesome-2.0.tar.gz
+URL:		http://awesome.naquadah.org/
 Summary:	awesome window manager
 License:	GPLv2+
 Group:		Graphical desktop/Other
