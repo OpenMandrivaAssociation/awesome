@@ -39,6 +39,12 @@ SCRIPT:
 exec /usr/bin/awesome
 EOF
 
+%post
+%make_session
+
+%postun
+%make_session
+
 %files
 %doc LICENSE AUTHORS README awesomerc
 %{_bindir}/%{name}
