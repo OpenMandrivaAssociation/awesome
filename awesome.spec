@@ -7,7 +7,7 @@ Summary:	awesome window manager
 License:	GPLv2+
 Group:		Graphical desktop/Other
 BuildRequires:	libx11-devel libxext-devel libxrandr-devel libxinerama-devel
-BuildRequires:	confuse-devel libxft-devel zlib-devel devel(libfreetype)
+BuildRequires:	confuse-devel libxft-devel zlib-devel freetype2-devel
 BuildRequires:	libcairo-devel asciidoc xmlto
 %description
 awesome is a tiling window manager initialy based on a dwm code rewriting.
