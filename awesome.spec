@@ -6,6 +6,7 @@ URL:		http://awesome.naquadah.org/
 Summary:	awesome window manager
 License:	GPLv2+
 Group:		Graphical desktop/Other
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	libx11-devel libxext-devel libxrandr-devel libxinerama-devel
 BuildRequires:	confuse-devel libxft-devel zlib-devel freetype2-devel
 BuildRequires:	libcairo-devel asciidoc xmlto
