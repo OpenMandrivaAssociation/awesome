@@ -1,7 +1,7 @@
 Name:		awesome
-Version:	2.0
+Version:	2.1
 Release:	%mkrel 1
-Source:		http://awesome.naquadah.org/download/awesome-2.0.tar.gz
+Source:		http://awesome.naquadah.org/download/awesome-%{version}.tar.bz2
 URL:		http://awesome.naquadah.org/
 Summary:	Window manager
 License:	GPLv2+
@@ -25,11 +25,13 @@ your screen. No gaps, no overlap.
 %setup -q
 
 %build
+%configure
 %make
 
 %install
 %{__rm} -Rf %{buildroot}
-%{__make} PREFIX=%{buildroot}%{_prefix} install
+#%{__make} PREFIX=%{buildroot}%{_prefix} install
+%makeinstall
 
 %{__mkdir_p} %{buildroot}%{_sysconfdir}/X11/wmsession.d/
 cat > %{buildroot}%{_sysconfdir}/X11/wmsession.d/19awesome << EOF
@@ -51,5 +53,7 @@ EOF
 %{_bindir}/%{name}
 %{_bindir}/%{name}-client
 %{_mandir}/man1/%{name}.1*
+%{_mandir}/man1/%{name}rc.1*
 %{_mandir}/man1/%{name}-client.1*
+%{_datadir}/%{name}/icons/layouts/*
 %config(noreplace) %{_sysconfdir}/X11/wmsession.d/19awesome
