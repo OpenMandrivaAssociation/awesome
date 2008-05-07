@@ -9,7 +9,7 @@ Group:		Graphical desktop/Other
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	libx11-devel libxext-devel libxrandr-devel libxinerama-devel
 BuildRequires:	confuse-devel libxft-devel zlib-devel freetype2-devel
-BuildRequires:	libcairo-devel asciidoc xmlto pango-devel doxygen
+BuildRequires:	libcairo-devel asciidoc xmlto pango-devel doxygen imlib2-devel
 %description
 awesome is a tiling window manager initialy based on a dwm code rewriting.
 It's extremely fast, small, dynamic and awesome.
