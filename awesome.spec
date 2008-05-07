@@ -1,5 +1,5 @@
 Name:		awesome
-Version:	2.1
+Version:	2.3
 Release:	%mkrel 1
 Source:		http://awesome.naquadah.org/download/awesome-%{version}.tar.bz2
 URL:		http://awesome.naquadah.org/
@@ -25,13 +25,13 @@ your screen. No gaps, no overlap.
 %setup -q
 
 %build
-%configure
+%configure2_5x
 %make
 
 %install
 %{__rm} -Rf %{buildroot}
 #%{__make} PREFIX=%{buildroot}%{_prefix} install
-%makeinstall
+%makeinstall_std
 
 %{__mkdir_p} %{buildroot}%{_sysconfdir}/X11/wmsession.d/
 cat > %{buildroot}%{_sysconfdir}/X11/wmsession.d/19awesome << EOF
@@ -52,8 +52,13 @@ EOF
 %doc LICENSE AUTHORS README awesomerc
 %{_bindir}/%{name}
 %{_bindir}/%{name}-client
+%{_bindir}/%{name}-menu
+%{_bindir}/%{name}-message
 %{_mandir}/man1/%{name}.1*
-%{_mandir}/man1/%{name}rc.1*
+%{_mandir}/man5/%{name}rc.5*
 %{_mandir}/man1/%{name}-client.1*
+%{_mandir}/man1/%{name}-menu.1*
+%{_mandir}/man1/%{name}-message.1*
 %{_datadir}/%{name}/icons/layouts/*
+%{_datadir}/%{name}/icons/*.png
 %config(noreplace) %{_sysconfdir}/X11/wmsession.d/19awesome
