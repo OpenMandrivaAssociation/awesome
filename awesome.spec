@@ -1,5 +1,5 @@
 Name:		awesome
-Version:	2.3
+Version:	2.3.1
 Release:	%mkrel 1
 Source:		http://awesome.naquadah.org/download/awesome-%{version}.tar.bz2
 URL:		http://awesome.naquadah.org/
