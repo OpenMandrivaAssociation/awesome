@@ -1,5 +1,5 @@
 Name:		awesome
-Version:	2.3.1
+Version:	2.3.2
 Release:	%mkrel 1
 Source:		http://awesome.naquadah.org/download/awesome-%{version}.tar.bz2
 URL:		http://awesome.naquadah.org/
@@ -10,6 +10,7 @@ BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	libx11-devel libxext-devel libxrandr-devel libxinerama-devel
 BuildRequires:	confuse-devel libxft-devel zlib-devel freetype2-devel
 BuildRequires:	libcairo-devel asciidoc xmlto pango-devel doxygen imlib2-devel
+
 %description
 awesome is a tiling window manager initialy based on a dwm code rewriting.
 It's extremely fast, small, dynamic and awesome.
@@ -30,7 +31,6 @@ your screen. No gaps, no overlap.
 
 %install
 %{__rm} -Rf %{buildroot}
-#%{__make} PREFIX=%{buildroot}%{_prefix} install
 %makeinstall_std
 
 %{__mkdir_p} %{buildroot}%{_sysconfdir}/X11/wmsession.d/
