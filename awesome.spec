@@ -1,7 +1,7 @@
 Name:		awesome
 #fwang: 2.4 requires cairo-xcb which does not exist any more
 Version:	2.3.6
-Release:	%mkrel 1
+Release:	%mkrel 2
 Source:		http://awesome.naquadah.org/download/awesome-%{version}.tar.bz2
 URL:		http://awesome.naquadah.org/
 Summary:	Window manager
