@@ -1,0 +1,23 @@
+Index: awesome-3.4.13/awesomeConfig.cmake
+===================================================================
+--- awesome-3.4.13.orig/awesomeConfig.cmake
++++ awesome-3.4.13/awesomeConfig.cmake
+@@ -147,7 +147,8 @@ pkg_check_modules(AWESOME_REQUIRED REQUI
+     libstartup-notification-1.0>=0.10
+     xproto>=7.0.15
+     imlib2
+-    libxdg-basedir>=1.0.0)
++    libxdg-basedir>=1.0.0
++    libev)
+ 
+ if(NOT AWESOME_REQUIRED_FOUND OR NOT AWESOME_COMMON_REQUIRED_FOUND)
+     message(FATAL_ERROR)
+@@ -161,7 +162,7 @@ macro(a_find_library variable library)
+ endmacro()
+ 
+ # Check for libev
+-a_find_library(LIB_EV ev)
++#a_find_library(LIB_EV ev)
+ 
+ # Check for backtrace_symbols()
+ include(CheckFunctionExists)
