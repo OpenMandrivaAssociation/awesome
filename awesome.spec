@@ -1,8 +1,8 @@
 Name:		awesome
 #fwang: 2.4 requires cairo-xcb which does not exist any more
-Version:	3.4.13
+Version:	3.5.1
 Release:	1
-Source0:	http://awesome.naquadah.org/download/%{name}-%{version}.tar.bz2
+Source0:	http://awesome.naquadah.org/download/%{name}-%{version}.tar.xz
 Patch0:		awesome-3.4.13-rosa-libev.patch
 URL:		http://awesome.naquadah.org/
 Summary:	Window manager
@@ -131,5 +131,6 @@ EOF
 * Mon Dec 17 2007 Nicolas Vigier <nvigier@mandriva.com> 2.0-1mdv2008.1
 + Revision: 124705
 - import awesome
+
 
 
