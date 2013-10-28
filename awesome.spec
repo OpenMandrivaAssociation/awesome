@@ -1,9 +1,8 @@
 Name:		awesome
 #fwang: 2.4 requires cairo-xcb which does not exist any more
-Version:	3.4.13
+Version:	3.5.2
 Release:	1
 Source0:	http://awesome.naquadah.org/download/%{name}-%{version}.tar.bz2
-Patch0:		awesome-3.4.13-rosa-libev.patch
 URL:		http://awesome.naquadah.org/
 Summary:	Window manager
 License:	GPLv2+
@@ -25,9 +24,11 @@ BuildRequires:	pkgconfig(pango)
 BuildRequires:	pkgconfig(imlib2)
 BuildRequires:	pkgconfig(pangocairo)
 BuildRequires:	pkgconfig(lua)
+BuildRequires:	lua-lgi
 BuildRequires:	pkgconfig(xcb-keysyms) >= 0.3.4
 BuildRequires:	pkgconfig(xcb-icccm) >= 0.3.8
 BuildRequires:	pkgconfig(xcb-image) >= 0.3.0
+BuildRequires:	pkgconfig(xcb-cursor)
 BuildRequires:	pkgconfig(libxdg-basedir) >= 1.0.0
 BuildRequires:	pkgconfig(libstartup-notification-1.0) >= 0.10
 BuildRequires:	pkgconfig(libev)
@@ -45,7 +46,7 @@ your screen. No gaps, no overlap.
 
 %prep
 %setup -q
-%patch0 -p1
+%apply_patches
 
 %build
 #configure2_5x
