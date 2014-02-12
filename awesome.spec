@@ -18,6 +18,7 @@ BuildRequires:	luadoc
 BuildRequires:	pkgconfig(cairo)
 BuildRequires:	pkgconfig(cairo-xcb)
 BuildRequires:	pkgconfig(freetype2)
+BuildRequires:	pkgconfig(gdk-pixbuf-2.0)
 BuildRequires:	pkgconfig(imlib2)
 BuildRequires:	pkgconfig(libev)
 BuildRequires:	pkgconfig(libstartup-notification-1.0) >= 0.10
