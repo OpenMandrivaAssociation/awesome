@@ -1,0 +1,10 @@
+--- awesomeConfig.cmake.orig	2013-10-13 00:48:49.000000000 +0800
++++ awesomeConfig.cmake	2013-10-13 08:42:05.675421552 +0800
+@@ -146,6 +146,7 @@
+     xcb-icccm>=0.3.8
+     cairo-xcb
+     libstartup-notification-1.0>=0.10
++    libev
+     xproto>=7.0.15
+     libxdg-basedir>=1.0.0)
+ 
