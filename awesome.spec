@@ -1,7 +1,7 @@
 Summary:	Window manager
 Name:		awesome
 Version:	3.5.2
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Url:		http://awesome.naquadah.org/
@@ -47,6 +47,7 @@ Requires:	feh
 Requires:	lua-lgi
 Requires:	typelib(cairo)
 Requires:	typelib(Pango)
+Requires:	typelib(PangoCairo)
 Requires:	xterm
 
 %description
