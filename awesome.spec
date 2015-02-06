@@ -1,7 +1,7 @@
 Summary:	Window manager
 Name:		awesome
 Version:	3.5.2
-Release:	2
+Release:	3
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Url:		http://awesome.naquadah.org/
