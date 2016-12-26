@@ -1,13 +1,14 @@
 Summary:	Window manager
 Name:		awesome
-Version:	3.5.2
-Release:	3
+Version:	4.0
+Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/Other
-Url:		http://awesome.naquadah.org/
-Source0:	http://awesome.naquadah.org/download/%{name}-%{version}.tar.xz
+Url:		https://awesomewm.org/
+Source0:	https://github.com/awesomeWM/awesome-releases/raw/master/%{name}-%{version}.tar.xz
 Patch0:		awesome-3.5.2-link.patch
 BuildRequires:	cmake
+BuildRequires:	ninja
 BuildRequires:	gperf
 BuildRequires:	imagemagick
 BuildRequires:	asciidoc xmlto doxygen
@@ -76,13 +77,13 @@ your screen. No gaps, no overlap.
 %prep
 %setup -q
 %patch0 -p0
+%cmake -DXDG_CONFIG_DIR:PATH=%{_sysconfdir}/xdg -G Ninja
 
 %build
-%cmake -DXDG_CONFIG_DIR:PATH=%{_sysconfdir}/xdg
-%make
+%ninja -C build
 
 %install
-%makeinstall_std -C build
+%ninja_install -C build
 
 mkdir -p %{buildroot}%{_sysconfdir}/X11/wmsession.d/
 cat > %{buildroot}%{_sysconfdir}/X11/wmsession.d/19awesome << EOF
