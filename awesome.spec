@@ -7,7 +7,7 @@ Group:		Graphical desktop/Other
 Url:		https://awesomewm.org/
 Source0:	https://github.com/awesomeWM/awesome-releases/raw/master/%{name}-%{version}.tar.xz
 #Patch0:		awesome-3.5.2-link.patch
-Patch0:     fix-build.patch
+#Patch0:     fix-build.patch
 BuildRequires:	cmake
 BuildRequires:	ninja
 BuildRequires:	gperf
