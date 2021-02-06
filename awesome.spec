@@ -24,7 +24,9 @@ BuildRequires:	pkgconfig(imlib2)
 BuildRequires:	pkgconfig(libev)
 BuildRequires:	pkgconfig(libstartup-notification-1.0) >= 0.10
 BuildRequires:	pkgconfig(libxdg-basedir)
-BuildRequires:	pkgconfig(lua)
+#BuildRequires:	pkgconfig(lua)
+BuildRequires:	lua5.3-devel
+BuildRequires:	lua5.3
 BuildRequires:	pkgconfig(pango)
 BuildRequires:	pkgconfig(pangocairo)
 BuildRequires:	pkgconfig(x11)
