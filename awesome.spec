@@ -7,6 +7,7 @@ Group:		Graphical desktop/Other
 Url:		https://awesomewm.org/
 Source0:	https://github.com/awesomeWM/awesome-releases/raw/master/%{name}-%{version}.tar.xz
 #Patch0:		awesome-3.5.2-link.patch
+Patch0:     fix-build.patch
 BuildRequires:	cmake
 BuildRequires:	ninja
 BuildRequires:	gperf
@@ -81,6 +82,7 @@ your screen. No gaps, no overlap.
 
 %prep
 %setup -q
+%autopatch -p1
 #patch0 -p0
 %cmake -DXDG_CONFIG_DIR:PATH=%{_sysconfdir}/xdg -G Ninja
 
