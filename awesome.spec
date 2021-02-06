@@ -1,6 +1,6 @@
 Summary:	Window manager
 Name:		awesome
-Version:	4.0
+Version:	4.3
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/Other
