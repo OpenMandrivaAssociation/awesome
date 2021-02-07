@@ -81,8 +81,10 @@ your screen. No gaps, no overlap.
 %files
 %doc LICENSE build/awesomerc.lua 00-authors.md 01-readme.md 02-contributing.md
 %{_bindir}/aw*
-#{_mandir}/man1/*.1*
-#{_mandir}/man5/*.5*
+%{_mandir}/*/man1/*
+%{_mandir}/*/man5/*
+%{_mandir}/man1/*
+%{_mandir}/man5/*
 %{_datadir}/%{name}
 %{_datadir}/xsessions/awesome.desktop
 %config(noreplace) %{_sysconfdir}/X11/wmsession.d/19awesome
