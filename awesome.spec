@@ -7,7 +7,7 @@ Group:		Graphical desktop/Other
 Url:		https://awesomewm.org/
 Source0:	https://github.com/awesomeWM/awesome-releases/raw/master/%{name}-%{version}.tar.xz
 #Patch0:		awesome-3.5.2-link.patch
-Patch1:   https://patch-diff.githubusercontent.com/raw/awesomeWM/awesome/pull/3065.patch
+Patch1:   3065.patch
 BuildRequires:	cmake
 BuildRequires:	ninja
 BuildRequires:	gperf
@@ -100,5 +100,5 @@ SCRIPT:
 exec /usr/bin/awesome
 EOF
 
-%find_lang %{name} --all-name --with-man
+%find_lang %{name} --with-man --all-name
 
