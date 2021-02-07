@@ -6,27 +6,36 @@ License:	GPLv2+
 Group:		Graphical desktop/Other
 Url:		https://awesomewm.org/
 Source0:	https://github.com/awesomeWM/awesome-releases/raw/master/%{name}-%{version}.tar.xz
-Patch1:   3065.patch
+# Upstream patch, from here https://github.com/awesomeWM/awesome/pull/3065 rebased by OpenSUSE for current stable
+
+# Fix for duplicate symbol #GCC10
+Patch1:   001-extern-vars-declaration-fix-gcc10.patch
+
 BuildRequires:	cmake
 BuildRequires:	ninja
 BuildRequires:	gperf
 BuildRequires:	imagemagick
-BuildRequires:	asciidoc xmlto doxygen
+BuildRequires:	asciidoc
+BuildRequires:  xmlto
+BuildRequires:  doxygen
+BuildRequires:  asciidoctor
 BuildRequires:	docbook-dtd45-xml
 BuildRequires:	docbook-style-xsl
+# Make sure to use always same Lua version to build awesome and lua-lgi.
+#BuildRequires:	pkgconfig(lua)
+BuildRequires:	lua5.3-devel
+BuildRequires:	lua5.3
 BuildRequires:	lua-lgi
 BuildRequires:	luadoc
 BuildRequires:	pkgconfig(cairo)
 BuildRequires:	pkgconfig(cairo-xcb)
+BuildRequires:  pkgconfig(dbus-1)
 BuildRequires:	pkgconfig(freetype2)
 BuildRequires:	pkgconfig(gdk-pixbuf-2.0)
 BuildRequires:	pkgconfig(imlib2)
 BuildRequires:	pkgconfig(libev)
 BuildRequires:	pkgconfig(libstartup-notification-1.0) >= 0.10
 BuildRequires:	pkgconfig(libxdg-basedir)
-#BuildRequires:	pkgconfig(lua)
-BuildRequires:	lua5.3-devel
-BuildRequires:	lua5.3
 BuildRequires:	pkgconfig(pango)
 BuildRequires:	pkgconfig(pangocairo)
 BuildRequires:	pkgconfig(x11)
@@ -54,6 +63,8 @@ Requires:	lua-lgi
 Requires:	typelib(cairo)
 Requires:	typelib(Pango)
 Requires:	typelib(PangoCairo)
+Requires: typelib(GLib)
+Requires: typelib(Gio)
 Requires:	xterm
 
 %description
@@ -68,7 +79,7 @@ Managing windows in tiled mode assures that no space will be wasted on
 your screen. No gaps, no overlap.
 
 %files
-%doc LICENSE build/awesomerc.lua
+%doc LICENSE build/awesomerc.lua 00-authors.md 01-readme.md 02-contributing.md
 %{_bindir}/aw*
 #{_mandir}/man1/*.1*
 #{_mandir}/man5/*.5*
@@ -82,7 +93,10 @@ your screen. No gaps, no overlap.
 %prep
 %setup -q
 %autopatch -p1
-%cmake -DXDG_CONFIG_DIR:PATH=%{_sysconfdir}/xdg -G Ninja
+%cmake \
+        -DXDG_CONFIG_DIR:PATH=%{_sysconfdir}/xdg \
+        -DCMAKE_BUILD_TYPE=Release \
+        -G Ninja
 
 %build
 %ninja -C build
