@@ -57,10 +57,10 @@ diff --git a/luaa.c b/luaa.c
 index 419a8c2eb2..aeaba9cd1f 100644
 --- a/luaa.c
 +++ b/luaa.c
-@@ -91,6 +91,8 @@ extern const struct luaL_Reg awesome_mouse_meta[];
- extern const struct luaL_Reg awesome_root_methods[];
- extern const struct luaL_Reg awesome_root_meta[];
- 
+@@ -77,6 +77,8 @@
+ extern const struct luaL_Reg awesome_mouse_methods[];
+ extern const struct luaL_Reg awesome_mouse_meta[];
+
 +signal_array_t global_signals;
 +
  /** A call into the Lua code aborted with an error.
@@ -187,15 +187,15 @@ diff --git a/objects/tag.c b/objects/tag.c
 index a0050cc2a9..1b1a135762 100644
 --- a/objects/tag.c
 +++ b/objects/tag.c
-@@ -203,6 +203,8 @@
+@@ -190,6 +190,8 @@
  #include "ewmh.h"
  #include "luaa.h"
- 
+
 +lua_class_t tag_class;
 +
- /** When a tag requests to be selected.
+ /**
   * @signal request::select
-  * @tparam string context The reason why it was called.
+  */
 diff --git a/objects/tag.h b/objects/tag.h
 index d6bb40e0d8..f830b1e2c5 100644
 --- a/objects/tag.h
