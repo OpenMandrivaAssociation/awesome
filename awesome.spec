@@ -6,7 +6,6 @@ License:	GPLv2+
 Group:		Graphical desktop/Other
 Url:		https://awesomewm.org/
 Source0:	https://github.com/awesomeWM/awesome-releases/raw/master/%{name}-%{version}.tar.xz
-#Patch0:		awesome-3.5.2-link.patch
 Patch1:   3065.patch
 BuildRequires:	cmake
 BuildRequires:	ninja
@@ -69,10 +68,10 @@ Managing windows in tiled mode assures that no space will be wasted on
 your screen. No gaps, no overlap.
 
 %files
-%doc LICENSE AUTHORS README build/awesomerc.lua
+%doc LICENSE build/awesomerc.lua
 %{_bindir}/aw*
-%{_mandir}/man1/*.1*
-%{_mandir}/man5/*.5*
+#{_mandir}/man1/*.1*
+#{_mandir}/man5/*.5*
 %{_datadir}/%{name}
 %{_datadir}/xsessions/awesome.desktop
 %config(noreplace) %{_sysconfdir}/X11/wmsession.d/19awesome
