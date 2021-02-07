@@ -68,7 +68,7 @@ the application in use and the task performed.
 Managing windows in tiled mode assures that no space will be wasted on
 your screen. No gaps, no overlap.
 
-%files -f %{name}.lang
+%files
 %doc LICENSE AUTHORS README build/awesomerc.lua
 %{_bindir}/aw*
 %{_mandir}/man1/*.1*
@@ -99,6 +99,4 @@ DESC=awesome window manager
 SCRIPT:
 exec /usr/bin/awesome
 EOF
-
-%find_lang %{name} --with-man --all-name
 
