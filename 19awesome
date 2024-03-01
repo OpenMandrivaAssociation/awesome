@@ -1,0 +1,5 @@
+NAME=awesome
+EXEC=/usr/bin/awesome
+DESC=awesome window manager
+SCRIPT:
+exec /usr/bin/awesome

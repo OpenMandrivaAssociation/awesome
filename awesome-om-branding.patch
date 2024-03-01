@@ -1,0 +1,12 @@
+diff -Naru awesome-4.3/awesomerc.lua awesome-4.3-patched/awesomerc.lua
+--- awesome-4.3/awesomerc.lua	2019-01-28 01:53:24.000000000 -0500
++++ awesome-4.3-patched/awesomerc.lua	2024-03-01 02:15:02.868059277 -0500
+@@ -48,7 +48,7 @@
+ -- {{{ Variable definitions
+ -- @DOC_LOAD_THEME@
+ -- Themes define colours, icons, font and wallpapers.
+-beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
++beautiful.init(gears.filesystem.get_themes_dir() .. "OpenMandriva/theme.lua")
+ 
+ -- @DOC_DEFAULT_APPLICATIONS@
+ -- This is used later as the default terminal and editor to run.
