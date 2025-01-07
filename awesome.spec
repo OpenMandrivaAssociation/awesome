@@ -1,4 +1,4 @@
-%global lua_version 5.3
+%global lua_version 5.4
 
 Summary:	Window manager
 Name:		awesome
@@ -29,6 +29,7 @@ BuildRequires:	docbook-dtd45-xml
 BuildRequires:	docbook-style-xsl
 # Make sure to use always same Lua version to build awesome and lua-lgi.
 BuildRequires:	lua%{lua_version}-devel
+BuildRequires:	lua-lgi
 BuildRequires:	pkgconfig(cairo)
 BuildRequires:	pkgconfig(cairo-xcb)
 BuildRequires:  pkgconfig(dbus-1)
@@ -60,7 +61,7 @@ BuildRequires:	pkgconfig(xproto)
 BuildRequires:	pkgconfig(xrandr)
 BuildRequires:	pkgconfig(zlib)
 
-Requires:	lua%{lua_version}-lgi
+Requires:	lua-lgi
 Requires:   luadoc
 Requires:	typelib(cairo)
 Requires:	typelib(Pango)
@@ -85,7 +86,7 @@ Managing windows in tiled mode assures that no space will be wasted on
 your screen. No gaps, no overlap.
 
 %files
-%doc LICENSE build/awesomerc.lua 00-authors.md 01-readme.md 02-contributing.md
+%doc LICENSE build/awesomerc.lua
 %{_bindir}/aw*
 %{_mandir}/*/man1/*
 %{_mandir}/*/man5/*
@@ -93,8 +94,9 @@ your screen. No gaps, no overlap.
 %{_mandir}/man5/*
 %{_datadir}/%{name}
 %{_datadir}/xsessions/awesome.desktop
-%config(noreplace) %{_sysconfdir}/X11/wmsession.d/19awesome
 %config(noreplace) %{_sysconfdir}/xdg/awesome/rc.lua
+%config(noreplace) %{_sysconfdir}/X11/wmsession.d/theme.lua
+%doc %{_docdir}/awesome
 
 #----------------------------------------------------------------------------
 
