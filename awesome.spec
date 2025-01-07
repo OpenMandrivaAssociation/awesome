@@ -86,7 +86,7 @@ Managing windows in tiled mode assures that no space will be wasted on
 your screen. No gaps, no overlap.
 
 %files
-%doc LICENSE build/awesomerc.lua
+%doc build/awesomerc.lua
 %{_bindir}/aw*
 %{_mandir}/*/man1/*
 %{_mandir}/*/man5/*
