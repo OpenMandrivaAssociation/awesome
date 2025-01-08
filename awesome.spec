@@ -3,7 +3,7 @@
 Summary:	Window manager
 Name:		awesome
 Version:	4.3
-Release:	2
+Release:	3
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Url:		https://awesomewm.org/
@@ -94,7 +94,7 @@ your screen. No gaps, no overlap.
 %{_datadir}/%{name}
 %{_datadir}/xsessions/awesome.desktop
 %config(noreplace) %{_sysconfdir}/xdg/awesome/rc.lua
-%config(noreplace) %{_sysconfdir}/X11/wmsession.d/theme.lua
+%config(noreplace) %{_sysconfdir}/X11/wmsession.d/19awesome
 %doc %{_docdir}/awesome
 
 #----------------------------------------------------------------------------
@@ -112,8 +112,8 @@ your screen. No gaps, no overlap.
 %ninja_install -C build
 
 mkdir -p %{buildroot}%{_sysconfdir}/X11/wmsession.d/
-install -D -m644 %{S:2} %{buildroot}%{_sysconfdir}/X11/wmsession.d
+install -D -m644 %{S:1} %{buildroot}%{_sysconfdir}/X11/wmsession.d
 mkdir -p %{buildroot}%{_datadir}/awesome/themes/OpenMandriva
 cp -R %{buildroot}%{_datadir}/awesome/themes/default/* %{buildroot}%{_datadir}/awesome/themes/OpenMandriva
-install -D -m644 %{S:1} %{buildroot}%{_datadir}/awesome/themes/OpenMandriva
+install -D -m644 %{S:2} %{buildroot}%{_datadir}/awesome/themes/OpenMandriva
 
