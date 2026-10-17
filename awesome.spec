@@ -3,7 +3,7 @@
 Summary:	Window manager
 Name:		awesome
 Version:	4.3
-Release:	3
+Release:	4
 License:	GPLv2+
 Group:		Graphical desktop/Other
 Url:		https://awesomewm.org/
@@ -61,14 +61,14 @@ BuildRequires:	pkgconfig(xproto)
 BuildRequires:	pkgconfig(xrandr)
 BuildRequires:	pkgconfig(zlib)
 
-Requires:	lua-lgi
-Requires:   luadoc
-Requires:	typelib(cairo)
-Requires:	typelib(Pango)
-Requires:	typelib(PangoCairo)
+Requires: lua-lgi
+#Requires: luadoc
+Requires: typelib(cairo)
+Requires: typelib(Pango)
+Requires: typelib(PangoCairo)
 Requires: typelib(GLib)
 Requires: typelib(Gio)
-Requires:	xterm
+Requires: xterm
 Requires: xcompmgr
 
 # for wallpaper setting handling
