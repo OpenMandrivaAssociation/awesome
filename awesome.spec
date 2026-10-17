@@ -103,6 +103,7 @@ your screen. No gaps, no overlap.
 %autosetup -p1
 %cmake -G Ninja \
         -DXDG_CONFIG_DIR:PATH=%{_sysconfdir}/xdg \
+        -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
         -DCMAKE_BUILD_TYPE=Release
 
 %build
